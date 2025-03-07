@@ -1,6 +1,6 @@
 {
   "name": "mdxtra",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Konverter Markdown ke HTML yang fleksibel.",
   "main": "./dist/esm/index.js",
   "bin": {
