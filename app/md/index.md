@@ -1,7 +1,3 @@
-# MDXtra
-
----
-
 **MDXtra** adalah static site generator berbasis Markdown yang ringan dan cepat untuk membangun dokumentasi atau website statis. Mendukung syntax highlighting, komponen HTML, penyisipan source code, live reload, minifikasi otomatis, serta GitHub Pages.
 
 ## Fitur
