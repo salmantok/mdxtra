@@ -1,37 +1,37 @@
 {
-  "name": "mdxtra",
-  "version": "0.0.3",
-  "description": "Konverter Markdown ke HTML yang fleksibel.",
-  "repository": "salmantok/mdxtra",
-  "homepage": "https://salmantok.github.io/mdxtra",
-  "type": "module",
-  "bin": {
-    "mdxtra": "dist/esm/index.js"
-  },
-  "files": [
-    "dist/"
-  ],
-  "scripts": {
-    "test:init": "node lib/index.js",
-    "test:dev": "node lib/index.js dev",
-    "test:build": "node lib/index.js build",
-    "dev": "yarn test:init && yarn test:dev",
-    "build": "yarn test:build"
-  },
-  "keywords": [
-    "mdxtra"
-  ],
-  "author": "Salmam <salmantok.dev@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "chalk": "^5.4.1",
-    "chokidar": "^5.0.0",
-    "clean-css": "^5.3.3",
-    "highlight.js": "^11.11.1",
-    "html-minifier-terser": "^7.2.0",
-    "marked": "^16.1.1",
-    "marked-highlight": "^2.2.2",
-    "serve-static": "^2.2.1",
-    "terser": "^5.43.1"
-  }
+    "name": "mdxtra",
+    "version": "0.0.3",
+    "description": "Konverter Markdown ke HTML yang fleksibel.",
+    "repository": "salmantok/mdxtra",
+    "homepage": "https://salmantok.github.io/mdxtra",
+    "type": "module",
+    "bin": {
+        "mdxtra": "./dist/esm/index.js"
+    },
+    "files": [
+        "dist/"
+    ],
+    "scripts": {
+        "test:init": "node ./lib/index.js",
+        "test:dev": "node ./lib/index.js dev",
+        "test:build": "node ./lib/index.js build",
+        "dev": "yarn test:init && yarn test:dev",
+        "build": "yarn test:build"
+    },
+    "keywords": [
+        "mdxtra"
+    ],
+    "author": "Salmam <salmantok.dev@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "chalk": "^5.4.1",
+        "chokidar": "^5.0.0",
+        "clean-css": "^5.3.3",
+        "highlight.js": "^11.11.1",
+        "html-minifier-terser": "^7.2.0",
+        "marked": "^16.1.1",
+        "marked-highlight": "^2.2.2",
+        "serve-static": "^2.2.1",
+        "terser": "^5.43.1"
+    }
 }
