@@ -1,15 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{TITLE}}</title>
-  {{HIGHLIGHT_CSS}}
-</head>
-<body>
-  <main>
-    {{CONTENT}}
-  </main>
-  {{HIGHLIGHT_JS}}
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>{title}</title>
+        {cdn_highlight} {cdn_css} {style}
+    </head>
+    <body class="d-flex flex-column min-vh-100 p-2 m-1 bg-body-tertiary">
+        <main class="flex-grow-1">{content}</main>
+        {script} {cdn_js}
+    </body>
 </html>

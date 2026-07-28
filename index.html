@@ -1,9 +1,60 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>index</title><style>pre{position:relative;display:flex;align-items:flex-start;gap:10px;margin-bottom:1em}pre code{display:block;width:100%}code{display:inline}.copy-button{position:absolute;right:5px;top:5px;padding:3px 6px;font-size:12px;color:#fff;background-color:#1a1a1a;border:none;border-radius:3px;cursor:pointer;opacity:0;transition:opacity .2s ease-in-out}pre:focus-within .copy-button,pre:hover .copy-button{opacity:1}</style><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/tomorrow-night-bright.min.css" integrity="sha512-kihsljiamrbQ3b3s3TXoAWNSbzbp+gYIeeva81nQwCj/zICdiT/QnKbWTV7DElmAm3mc4vuTR3fo0ToTe2cpNw==" crossorigin="anonymous" referrerpolicy="no-referrer"></head><body><main><h1>mdxtra</h1><p><strong>mdxtra</strong> adalah alat dokumentasi berbasis Markdown yang mengonversi file <code>.md</code> menjadi HTML dengan fitur tambahan seperti <strong>highlighting kode, tombol salin kode, dan sinkronisasi file</strong>.</p><h2>Fitur</h2><ul><li><strong>Konversi Markdown ke HTML</strong> dengan <em>highlighting</em> kode otomatis.</li><li><strong>Dukungan tombol salin kode</strong> untuk setiap blok kode.</li><li><strong>Minifikasi HTML</strong> menggunakan <code>html-minifier-terser</code>.</li><li><strong>Sinkronisasi file</strong> secara otomatis dengan <em>watcher</em> menggunakan <code>chokidar</code>.</li><li><strong>Dukungan konfigurasi</strong> melalui <code>config.json</code>.</li><li><strong>Tema <em>highlighting</em> kode</strong> menggunakan <code>highlight.js</code>.</li><li><strong>Manajemen file otomatis</strong> (pembuatan, penghapusan, dan penyelarasan file).</li></ul><h2>Instalasi</h2><pre><code class="hljs language-sh">npm install -g mdxtra
-</code></pre><h2>Cara Menggunakan</h2><h3>Menjalankan mdxtra</h3><p>Untuk memulai, jalankan perintah berikut di dalam direktori proyek:</p><pre><code class="hljs language-sh">mdxtra
-</code></pre><p>Pada eksekusi pertama, mdxtra akan meminta Anda untuk memilih direktori output. Tekan enter dan output direktori ke proyek saat ini.</p><h3>Struktur Direktori</h3><p>Secara default, mdxtra bekerja dengan struktur berikut:</p><pre><code>root/
-  app/
-    <span class="hljs-keyword">index</span>.md
-  <span class="hljs-built_in">public</span>/
-    <span class="hljs-keyword">index</span>.html
-config.json
-</code></pre><ul><li><strong><code>app/</code></strong> adalah tempat menyimpan file Markdown dan aset tambahan.</li><li><strong><code>public/</code></strong> berisi <strong>template HTML utama</strong>.</li><li><strong><code>config.json</code></strong> memungkinkan Anda mengatur output dan title.</li></ul></main><script>document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll("pre").forEach((e=>{const t=e.querySelector("code");if(!t)return;const n=document.createElement("button");n.innerText="Copy",n.className="copy-button",n.onclick=()=>{navigator.clipboard.writeText(t.innerText).then((()=>{n.innerText="Copied!",setTimeout((()=>n.innerText="Copy"),2e3)}))},e.appendChild(n)}))}))</script></body></html>
+<!--  
+Developed by: Salman  
+-->  
+<!doctype html><html lang='id'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>MDXtra</title><link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/highlight.js@11.10.0/styles/github.min.css' crossorigin='anonymous'><link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' crossorigin='anonymous'></head><body class='d-flex flex-column min-vh-100 p-2 m-1 bg-body-tertiary'><main class='flex-grow-1'><h1>MDXtra</h1><hr><p><strong>MDXtra</strong> adalah static site generator berbasis Markdown yang ringan dan cepat untuk membangun dokumentasi atau website statis. Mendukung syntax highlighting, komponen HTML, penyisipan source code, live reload, minifikasi otomatis, serta GitHub Pages.</p><h2>Fitur</h2><ul><li>Markdown → HTML</li><li>Live Reload</li><li>Minify HTML, CSS, dan JavaScript</li><li>Syntax Highlight (Highlight.js)</li><li>Template HTML</li><li>Placeholder HTML &amp; Source Code</li><li>CSS &amp; JavaScript global</li><li>Copy Button untuk blok kode</li><li>Auto Translate</li><li>CDN CSS &amp; JavaScript</li><li>GitHub Pages</li><li>Multi halaman</li></ul><hr><h2>Instalasi</h2><pre><code class='hljs language-bash'>npm install -g mdxtra
+</code></pre><hr><h2>Memulai Project</h2><pre><code class='hljs language-bash'>mdxtra
+</code></pre><p>Struktur:</p><pre><code class='hljs language-text'>project/
+├── app/
+│   ├── md/
+│   ├── css/
+│   ├── js/
+│   ├── html/
+│   └── code/
+├── public/
+│   └── index.html
+├── config.json
+├── titles.json
+├── cdn.css.json
+├── cdn.js.json
+├── cdn.highlight.json
+└── .prettierignore
+</code></pre><hr><h2>Development</h2><p>Jalankan server pengembangan:</p><pre><code class='hljs language-bash'>mdxtra dev
+</code></pre><p>Server berjalan di:</p><pre><code class='hljs language-text'>http://127.0.0.1:3173
+</code></pre><p>Fitur:</p><ul><li>Live Reload</li><li>Build otomatis</li><li>Browser terbuka otomatis</li></ul><hr><h2>Build</h2><pre><code class='hljs language-bash'>mdxtra build
+</code></pre><p>Hasil build akan disimpan di folder <code>dist/</code>.</p><hr><h2>Struktur Folder</h2><table><thead><tr><th>Folder</th><th>Fungsi</th></tr></thead><tbody><tr><td><code>app/md</code></td><td>Halaman Markdown</td></tr><tr><td><code>app/css</code></td><td>CSS global</td></tr><tr><td><code>app/js</code></td><td>JavaScript global</td></tr><tr><td><code>app/html</code></td><td>Komponen HTML</td></tr><tr><td><code>app/code</code></td><td>Source code yang dapat disisipkan</td></tr></tbody></table><hr><h2>Placeholder</h2><h3>HTML</h3><pre><code class='hljs language-text'>{html.header}
+{html.docs.sidebar}
+
+</code></pre><h3>Source Code</h3><pre><code class='hljs language-text'>{code.example.js}
+</code></pre><hr><h2>Template</h2><p>Template berada di:</p><pre><code class='hljs language-text'>public/index.html
+</code></pre><p>Placeholder yang tersedia:</p><table><thead><tr><th>Placeholder</th><th>Keterangan</th></tr></thead><tbody><tr><td><code>{title}</code></td><td>Judul halaman</td></tr><tr><td><code>{content}</code></td><td>Isi Markdown</td></tr><tr><td><code></code></td><td>CSS</td></tr><tr><td><code><script>document.addEventListener("DOMContentLoaded",()=>{const e='id',t=(navigator.languages?.[0]||navigator.language||e).split("-")[0];if(t===e)return;if(window.__mdxtraTranslateLoaded)return;window.__mdxtraTranslateLoaded=!0;const n=document.createElement("div");n.id='google_translate_element',n.style.display='none',document.body.appendChild(n),window.googleTranslateElementInit=function(){new google.translate.TranslateElement({pageLanguage:e,autoDisplay:!1},"google_translate_element");const n=setInterval(()=>{const e=document.querySelector(".goog-te-combo");e&&(e.value=t,e.dispatchEvent(new Event("change")),clearInterval(n))},500)};const a=document.createElement("script");a.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',a.async=!0,document.head.appendChild(a)})</script></code></td><td>JavaScript</td></tr><tr><td><code>{cdn.css}</code></td><td>CDN CSS</td></tr><tr><td><code></code></td><td>CDN JavaScript</td></tr><tr><td><code>{cdn.highlight}</code></td><td>Tema Highlight.js</td></tr><tr><td><code>{base_href}</code></td><td>Base URL GitHub Pages</td></tr></tbody></table><hr><h2>Konfigurasi</h2><p><code>config.json</code></p><pre><code class='hljs language-json'><span class='hljs-punctuation'>{</span>
+    <span class='hljs-attr'>&quot;outDir&quot;</span><span class='hljs-punctuation'>:</span> <span class='hljs-string'>&quot;dist&quot;</span><span class='hljs-punctuation'>,</span>
+    <span class='hljs-attr'>&quot;singleQuote&quot;</span><span class='hljs-punctuation'>:</span> <span class='hljs-literal'><span class='hljs-keyword'>true</span></span><span class='hljs-punctuation'>,</span>
+    <span class='hljs-attr'>&quot;copyButton&quot;</span><span class='hljs-punctuation'>:</span> <span class='hljs-literal'><span class='hljs-keyword'>false</span></span><span class='hljs-punctuation'>,</span>
+    <span class='hljs-attr'>&quot;autoTranslate&quot;</span><span class='hljs-punctuation'>:</span> <span class='hljs-literal'><span class='hljs-keyword'>false</span></span><span class='hljs-punctuation'>,</span>
+    <span class='hljs-attr'>&quot;githubPages&quot;</span><span class='hljs-punctuation'>:</span> <span class='hljs-literal'><span class='hljs-keyword'>null</span></span>
+<span class='hljs-punctuation'>}</span>
+</code></pre><table><thead><tr><th>Opsi</th><th>Fungsi</th></tr></thead><tbody><tr><td><code>outDir</code></td><td>Folder hasil build</td></tr><tr><td><code>singleQuote</code></td><td>Gunakan petik tunggal pada HTML</td></tr><tr><td><code>copyButton</code></td><td>Tombol Copy pada blok kode</td></tr><tr><td><code>autoTranslate</code></td><td>Google Translate otomatis</td></tr><tr><td><code>githubPages</code></td><td>Base path GitHub Pages</td></tr></tbody></table><hr><h2>Judul Halaman</h2><p><code>titles.json</code></p><pre><code class='hljs language-json'><span class='hljs-punctuation'>{</span>
+    <span class='hljs-attr'>&quot;index&quot;</span><span class='hljs-punctuation'>:</span> <span class='hljs-string'>&quot;Beranda&quot;</span><span class='hljs-punctuation'>,</span>
+    <span class='hljs-attr'>&quot;about&quot;</span><span class='hljs-punctuation'>:</span> <span class='hljs-string'>&quot;Tentang Kami&quot;</span>
+<span class='hljs-punctuation'>}</span>
+</code></pre><hr><h2>CDN</h2><h3>CSS</h3><p><code>cdn.css.json</code></p><pre><code class='hljs language-json'><span class='hljs-punctuation'>[</span><span class='hljs-string'>&quot;https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css&quot;</span><span class='hljs-punctuation'>]</span>
+</code></pre><h3>JavaScript</h3><p><code>cdn.js.json</code></p><pre><code class='hljs language-json'><span class='hljs-punctuation'>[</span><span class='hljs-string'>&quot;https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js&quot;</span><span class='hljs-punctuation'>]</span>
+</code></pre><h3>Highlight.js</h3><p><code>cdn.highlight.json</code></p><pre><code class='hljs language-json'><span class='hljs-punctuation'>[</span><span class='hljs-string'>&quot;https://cdn.jsdelivr.net/npm/highlight.js/styles/github.min.css&quot;</span><span class='hljs-punctuation'>]</span>
+</code></pre><hr><h2>Contoh</h2><pre><code class='hljs language-markdown'><span class='hljs-section'># Selamat Datang</span>
+
+{html.header}
+
+<span class='hljs-section'>## Contoh</span>
+
+{code.example.js}
+
+[<span class='hljs-string'>Lanjut</span>](<span class='hljs-link'>install.html</span>)
+</code></pre><hr><h2>Perintah</h2><pre><code class='hljs language-bash'><span class='hljs-comment'># Inisialisasi project</span>
+mdxtra
+
+<span class='hljs-comment'># Development</span>
+mdxtra dev
+
+<span class='hljs-comment'># Production build</span>
+mdxtra build
+</code></pre></main><script>document.addEventListener("DOMContentLoaded",()=>{const e='id',t=(navigator.languages?.[0]||navigator.language||e).split("-")[0];if(t===e)return;if(window.__mdxtraTranslateLoaded)return;window.__mdxtraTranslateLoaded=!0;const n=document.createElement("div");n.id='google_translate_element',n.style.display='none',document.body.appendChild(n),window.googleTranslateElementInit=function(){new google.translate.TranslateElement({pageLanguage:e,autoDisplay:!1},"google_translate_element");const n=setInterval(()=>{const e=document.querySelector(".goog-te-combo");e&&(e.value=t,e.dispatchEvent(new Event("change")),clearInterval(n))},500)};const a=document.createElement("script");a.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',a.async=!0,document.head.appendChild(a)})</script></body></html>
