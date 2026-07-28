@@ -1,21 +1,19 @@
-**MDXtra** adalah static site generator berbasis Markdown yang ringan dan cepat untuk membangun dokumentasi atau website statis. Mendukung syntax highlighting, komponen HTML, penyisipan source code, live reload, minifikasi otomatis, serta GitHub Pages.
+**MDXtra** adalah static site generator berbasis Markdown yang ringan dan cepat untuk membangun dokumentasi maupun website statis. MDXtra mendukung syntax highlighting, komponen HTML, penyisipan source code, live reload, minifikasi otomatis, serta deployment ke GitHub Pages.
 
 ## Fitur
 
-- Markdown → HTML
+- Konversi Markdown ke HTML
 - Live Reload
 - Minify HTML, CSS, dan JavaScript
-- Syntax Highlight (Highlight.js)
+- Syntax Highlight dengan Highlight.js
 - Template HTML
-- Placeholder HTML & Source Code
-- CSS & JavaScript global
+- Placeholder HTML dan Source Code
+- CSS dan JavaScript global
 - Copy Button untuk blok kode
 - Auto Translate
-- CDN CSS & JavaScript
-- GitHub Pages
+- CDN CSS dan JavaScript
+- Dukungan GitHub Pages
 - Multi halaman
-
----
 
 ## Instalasi
 
@@ -23,15 +21,13 @@
 npm install -g mdxtra
 ```
 
----
-
-## Memulai Project
+## Membuat Project
 
 ```bash
 mdxtra
 ```
 
-Struktur:
+Struktur project:
 
 ```text
 project/
@@ -51,8 +47,6 @@ project/
 └── .prettierignore
 ```
 
----
-
 ## Development
 
 Jalankan server pengembangan:
@@ -61,21 +55,21 @@ Jalankan server pengembangan:
 mdxtra dev
 ```
 
-Server berjalan di:
+Server akan berjalan di:
 
 ```text
 http://127.0.0.1:3173
 ```
 
-Fitur:
+Fitur yang tersedia:
 
 - Live Reload
-- Build otomatis
-- Browser terbuka otomatis
-
----
+- Build otomatis saat file berubah
+- Browser terbuka secara otomatis
 
 ## Build
+
+Buat versi produksi dengan menjalankan:
 
 ```bash
 mdxtra build
@@ -83,19 +77,27 @@ mdxtra build
 
 Hasil build akan disimpan di folder `dist/`.
 
----
-
 ## Struktur Folder
 
-| Folder     | Fungsi                            |
-| ---------- | --------------------------------- |
-| `app/md`   | Halaman Markdown                  |
-| `app/css`  | CSS global                        |
-| `app/js`   | JavaScript global                 |
-| `app/html` | Komponen HTML                     |
-| `app/code` | Source code yang dapat disisipkan |
+### `app/md`
 
----
+Berisi file Markdown yang akan dikonversi menjadi halaman HTML.
+
+### `app/css`
+
+Berisi stylesheet global yang diterapkan ke seluruh halaman.
+
+### `app/js`
+
+Berisi JavaScript global.
+
+### `app/html`
+
+Berisi komponen HTML yang dapat disisipkan menggunakan placeholder.
+
+### `app/code`
+
+Berisi source code yang dapat ditampilkan di dalam dokumen Markdown.
 
 ## Placeholder
 
@@ -113,11 +115,9 @@ Hasil build akan disimpan di folder `dist/`.
 {code.example.js}
 ```
 
----
-
 ## Template
 
-Template berada di:
+Template utama berada di:
 
 ```text
 public/index.html
@@ -125,22 +125,18 @@ public/index.html
 
 Placeholder yang tersedia:
 
-| Placeholder       | Keterangan            |
-| ----------------- | --------------------- |
-| `{title}`         | Judul halaman         |
-| `{content}`       | Isi Markdown          |
-| `{style}`         | CSS                   |
-| `{script}`        | JavaScript            |
-| `{cdn.css}`       | CDN CSS               |
-| `{cdn.js}`        | CDN JavaScript        |
-| `{cdn.highlight}` | Tema Highlight.js     |
-| `{base_href}`     | Base URL GitHub Pages |
-
----
+- `{title}` — Judul halaman.
+- `{content}` — Hasil konversi Markdown.
+- `{style}` — CSS yang dihasilkan.
+- `{script}` — JavaScript yang dihasilkan.
+- `{cdn.css}` — Seluruh CDN CSS.
+- `{cdn.js}` — Seluruh CDN JavaScript.
+- `{cdn.highlight}` — Tema Highlight.js.
+- `{base_href}` — Base URL untuk GitHub Pages.
 
 ## Konfigurasi
 
-`config.json`
+File `config.json`:
 
 ```json
 {
@@ -152,19 +148,17 @@ Placeholder yang tersedia:
 }
 ```
 
-| Opsi            | Fungsi                          |
-| --------------- | ------------------------------- |
-| `outDir`        | Folder hasil build              |
-| `singleQuote`   | Gunakan petik tunggal pada HTML |
-| `copyButton`    | Tombol Copy pada blok kode      |
-| `autoTranslate` | Google Translate otomatis       |
-| `githubPages`   | Base path GitHub Pages          |
+Penjelasan opsi:
 
----
+- `outDir` — Menentukan folder hasil build.
+- `singleQuote` — Menggunakan tanda petik tunggal pada output HTML.
+- `copyButton` — Menampilkan tombol **Copy** pada blok kode.
+- `autoTranslate` — Mengaktifkan Google Translate secara otomatis.
+- `githubPages` — Menentukan base path saat deployment ke GitHub Pages.
 
 ## Judul Halaman
 
-`titles.json`
+File `titles.json`:
 
 ```json
 {
@@ -173,7 +167,7 @@ Placeholder yang tersedia:
 }
 ```
 
----
+Setiap key merepresentasikan nama file Markdown tanpa ekstensi, sedangkan nilainya digunakan sebagai judul halaman.
 
 ## CDN
 
@@ -201,8 +195,6 @@ Placeholder yang tersedia:
 ["https://cdn.jsdelivr.net/npm/highlight.js/styles/github.min.css"]
 ```
 
----
-
 ## Contoh
 
 ```markdown
@@ -217,17 +209,15 @@ Placeholder yang tersedia:
 [Lanjut](install.md)
 ```
 
----
-
 ## Perintah
 
 ```bash
-# Inisialisasi project
+# Membuat project baru
 mdxtra
 
-# Development
+# Menjalankan development server
 mdxtra dev
 
-# Production build
+# Build untuk produksi
 mdxtra build
 ```
